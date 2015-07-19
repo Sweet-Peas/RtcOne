@@ -1,7 +1,6 @@
 
 #include <Wire.h>
-#include <avr/pgmspace.h>
-#include "mcp7940x.h"
+#include "RtcOne.h"
 
 //////////////////////////////////////////////////////////
 // utility code, some of this could be exposed in the DateTime API if needed

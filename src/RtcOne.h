@@ -4,25 +4,23 @@
 
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
-  #ifndef I2CWRITE(x)
+  #ifndef I2CWRITE
     #define I2CWRITE(x) Wire.write(x)
   #endif
-  #ifndef I2CREAD()
+  #ifndef I2CREAD
     #define I2CREAD() Wire.read()
   #endif
 #else
   #include "WProgram.h"
-  #ifndef I2CWRITE(x)
+  #ifndef I2CWRITE
     #define I2CWRITE(x) Wire.send(x)
   #endif
-  #ifndef I2CREAD()
+  #ifndef I2CREAD
     #define I2CREAD() Wire.receive()
   #endif
 #endif
 
 #include <inttypes.h>
-#include <avr/pgmspace.h>
-
 
 /////////////////////////////////////////////////////////////
 // Common/Generic Class independent I2C functions to support old and new IDE versions
