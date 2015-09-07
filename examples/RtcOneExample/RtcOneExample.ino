@@ -21,13 +21,16 @@
 #include <Wire.h>
 #include <RtcOne.h>
 
+#define SDA_PIN      2
+#define SCL_PIN      14
+
 RTC_MCP7940X RTC;
 char buf[9];
 uint8_t mac[6];
 
 void setup () {
     Serial.begin(9600);
-    Wire.begin();
+    Wire.begin(SDA_PIN, SCL_PIN);
     RTC.begin();
     
     // following line sets the RTC to the date & time this sketch was compiled
